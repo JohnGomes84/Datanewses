@@ -83,13 +83,25 @@ Esses numeros sao um snapshot de referencia da ultima validacao completa; eles p
 pip install -r requirements.txt
 ```
 
-2. Inicialize o banco:
+2. Crie o arquivo de ambiente:
+
+```bash
+cp .env.example .env
+```
+
+No Windows PowerShell:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+3. Inicialize o banco:
 
 ```bash
 python scripts/init_db.py
 ```
 
-3. Rode o pipeline completo:
+4. Rode o pipeline completo:
 
 ```bash
 python scripts/test_pipeline.py
@@ -101,18 +113,18 @@ Tambem registra resumo por ciclo, retencao automatica de historico e reforco con
 O tracking de experimentos do MLflow e armazenado localmente em `models/mlflow.db`.
 Os artefatos dos modelos ficam em `models/mlruns`.
 
-4. Suba o dashboard:
+5. Suba o dashboard:
 
 No Windows, prefira este comando para evitar o prompt inicial do Streamlit:
 
 ```powershell
-cmd /c "set STREAMLIT_BROWSER_GATHER_USAGE_STATS=false&& set STREAMLIT_SERVER_HEADLESS=true&& streamlit run services/dashboard/app.py"
+cmd /c "(echo.) | streamlit run services/dashboard/app.py --server.headless true --browser.gatherUsageStats false"
 ```
 
 Em outros ambientes, ou se o prompt inicial nao for um problema:
 
 ```bash
-streamlit run services/dashboard/app.py
+streamlit run services/dashboard/app.py --server.headless true --browser.gatherUsageStats false
 ```
 
 ## Execucao Rapida
