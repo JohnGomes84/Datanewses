@@ -1,0 +1,25 @@
+services:
+  pipeline:
+    build:
+      context: .
+      dockerfile: services/ml/Dockerfile
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+    env_file:
+      - .env
+    restart: "no"
+
+  dashboard:
+    build:
+      context: .
+      dockerfile: services/dashboard/Dockerfile
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./data:/app/data
+    env_file:
+      - .env
+    depends_on:
+      - pipeline
+    restart: unless-stopped

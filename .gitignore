@@ -1,0 +1,19 @@
+.env
+.env.*
+!.env.example
+
+.streamlit.pid
+*.log
+
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+
+data/
+logs/
+models/
+
+.streamlit/
+
+Novo Documento de Texto.txt

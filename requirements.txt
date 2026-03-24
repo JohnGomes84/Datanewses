@@ -1,0 +1,13 @@
+python-dotenv
+requests
+beautifulsoup4
+pandas
+apscheduler
+pyarrow
+sqlalchemy
+scikit-learn
+xgboost
+statsmodels
+mlflow
+streamlit
+plotly
