@@ -148,6 +148,16 @@ Para rodar ciclos continuos localmente:
 powershell -ExecutionPolicy Bypass -File scripts/run_scheduler.ps1 -Cycles 3 -IntervalSeconds 3600
 ```
 
+## Demo Rapida
+
+Para abrir o dashboard com uma base amostral versionada no Git, sem rodar o pipeline completo:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/run_demo.ps1
+```
+
+Detalhes adicionais de bootstrap estao em `docs/BOOTSTRAP.md`.
+
 ## Testes
 
 Suite minima de entrega:
